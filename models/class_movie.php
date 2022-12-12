@@ -10,13 +10,13 @@ class Movie
     public $genres;
 
 
-    function __construct(
-        $film_name,
-        $trama,
-        $price,
-        $authors,
-        $cast,
-        $genres
+    public function __construct(
+        String $film_name,
+        String $trama,
+        Int $price,
+        String $authors,
+        Cast $cast,
+        String $genres
     ) {
         $this->film_name = $film_name;
         $this->trama = $trama;
@@ -28,11 +28,15 @@ class Movie
 
     public function printMovieInfo()
     {
+        $string = '';
+        foreach ($this->cast as $value) {
+            $string .= $value;
+        };
         return "nome del film: $this->film_name,
         trama: $this->trama,
         prezzo del film: $this->price,
         nome degli autori del film: $this->authors,
-        nome del cast: $this->cast, generi: $this->genres";
+        cast: $string generi: $this->genres";
     }
 };
 

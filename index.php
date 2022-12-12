@@ -3,8 +3,16 @@
 require_once __DIR__ . "./models/class_movie.php";
 
 $cast1 = new Cast('marco', 'luca', 'giovanni');
-$movie1 = new Movie('film', 'bella trama', 12, '', $cast1, '');
 
-var_dump($movie1);
+$array = [
+    new Movie('film', 'bella trama', 12, '', $cast1, ''),
+    new Movie('film', 'bella trama', 12, '', $cast1, ''),
 
-echo $movie1->printMovieInfo();
+];
+
+
+var_dump($array);
+
+foreach ($array as $value) {
+    echo $value->printMovieInfo();
+}
